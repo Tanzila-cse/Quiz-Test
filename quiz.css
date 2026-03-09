@@ -1,0 +1,128 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #09001d;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+  }
+  
+  /* Header Section */
+  h1 {
+    color: #c40094;
+    margin-bottom: 20px;
+  }
+  
+  /* Main Container */
+  .container {
+    margin: 0 auto;
+    width: 60%;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #555;
+    text-align: center;
+  }
+  
+  /* Quiz Container - Centered */
+  #quiz-container {
+    margin: 20px auto;
+    padding: 20px;
+    background: #1a0a36;
+    border-radius: 8px;
+    border: 1px solid #555;
+    box-shadow: 2px 2px 5px #555;
+    color: white;
+    max-width: 600px;
+  }
+  
+  /* Center the entire quiz page */
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Buttons - Styled */
+  button {
+    background-color: #c40094;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #9a0063;
+  }
+  
+  /* Circular Percentage Results */
+  #result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .circle-progress {
+    width: 150px;
+    height: 150px;
+    background: conic-gradient(#c40094 0%, #c40094 0%, #555 0%); /* Change blue to purple */
+    border-radius: 50%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .percentage-text {
+    position: absolute;
+    z-index: 10;
+  }
+  
+  
+  /* Question Container */
+  .quiz-question {
+    margin: 10px 0;
+    text-align: left;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  input[type="radio"] {
+    margin-right: 8px;
+  }
+  
+  /* Submit Button */
+  #submit {
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  #submit:hover {
+    background-color: #008bb9;
+  }
+  

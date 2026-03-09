@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="quiz.css" />
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Quiz App</h1>
+    <button id="start-btn">Start Quiz</button>
+    <div id="quiz-container"></div>
+    <button id="submit-btn">Submit Quiz</button>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        numb: 1,
+        question: "What does HTML stand for?",
+        answer: "C.Hyper Text Markup Language",
+        option: [
+          "A.Hyper Text Muilti Language",
+          "B.Hyper Text Muiltiple Language",
+          "C.Hyper Text Markup Language",
+          "D.Home Text Muilti Language",
+        ],
+      },
+      {
+        numb: 2,
+        question: "What does CSS stand for?",
+        answer: "A.Cascading Style Sheet",
+        option: [
+          "A.Cascading Style Sheet",
+          "B.Cute Style Sheet",
+          "C.Computer Style Sheet",
+          "D.Code Style Sheet",
+        ],
+      },
+      {
+        numb: 3,
+        question: "What does PHP stand for?",
+        answer: "A.Hypertext Preproessor",
+        option: [
+          "A.Hypertext Preproessor",
+          "B.Hometext Programming",
+          "C.Hypertext Programming",
+          "D.Programming Hypertext Preproccessor",
+        ],
+      },
+      {
+        numb: 4,
+        question: "What does SQL stand for?",
+        answer: "D.Structured Query Language",
+        option: [
+          "A.Strength Query Language",
+          "B.Stylesheet Query Language",
+          "C.Science Question Language",
+          "D.Structured Query Language",
+        ],
+      },
+      {
+        numb: 5,
+        question: "What does XML stand for?",
+        answer: "D.Extensible Markup Language",
+        option: [
+          "A.Exccellent Muiltiple Language",
+          "B.Explore Muiltiple Language",
+          "C.Extra Markup Language",
+          "D.Extensible Markup Language",
+        ],
+      },
+    ];
+
+    let userAnswers = [];
+    const startBtn = document.getElementById("start-btn");
+    const quizContainer = document.getElementById("quiz-container");
+    const submitBtn = document.getElementById("submit-btn");
+
+    /**
+     * Dynamically renders the quiz UI
+     */
+    function renderQuiz() {
+      quizContainer.innerHTML = ""; // Clear previous state
+      questions.forEach((q, index) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.className = "question-container";
+        questionDiv.innerHTML = `
+          <p><b>Q${q.numb}: ${q.question}</b></p>
+          <ul>
+            ${q.option
+              .map(
+                (opt) =>
+                  `<li><input type="radio" name="question-${index}" value="${opt}" /> ${opt}</li>`
+              )
+              .join("")}
+          </ul>
+        `;
+        quizContainer.appendChild(questionDiv);
+      });
+      quizContainer.style.display = "block";
+      submitBtn.style.display = "block";
+    }
+
+    /**
+     * Handles quiz submission
+     */
+    function handleSubmit() {
+      let score = 0;
+
+      questions.forEach((q, index) => {
+        const selectedOption = document.querySelector(
+          `input[name="question-${index}"]:checked`
+        );
+
+        if (selectedOption && selectedOption.value === q.answer) {
+          score++;
+        }
+      });
+
+      alert(`You scored ${score} out of ${questions.length}`);
+      quizContainer.style.display = "none";
+      submitBtn.style.display = "none";
+    }
+
+    startBtn.addEventListener("click", () => {
+      renderQuiz();
+    });
+
+    submitBtn.addEventListener("click", handleSubmit);
+  </script>
+</body>
+</html>

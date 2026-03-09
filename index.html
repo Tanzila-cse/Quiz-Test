@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    
+    <a href="admin_login.php">Admin</a>
+    <a href="login.html">Login</a>
+    <a href="#">About us</a>
+    <a href="#">Contact</a>
+
+    
+  </nav>
+
+  <div class="home-content">
+    <h1>Quiz Website</h1>
+    <p>Welcome to Knowledge!</p>
+    <button class="start-btn" onclick="showPopup()">Start Quiz</button>
+  </div>
+
+  <div class="overlay"></div>
+<div class="popup-info" id="popup-info">
+  <h2>Quiz Guide</h2>
+  <ul>
+    <li>1. You must log in to start the quiz.</li>
+    <li>2. A variety of subject options are available.</li>
+    <li>3. Enhance your preparation with our quizzes.</li>
+  </ul>
+  <div class="btn-group">
+    <button class="exit-btn" onclick="closePopup()">Exit</button>
+    <button class="continue-btn" onclick="redirectToSignup()">Continue</button>
+  </div>
+</div>
+
+  
+
+  <script>
+  function showPopup() {
+  document.getElementById('popup-info').style.display = 'block';
+  document.querySelector('.overlay').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('popup-info').style.display = 'none';
+  document.querySelector('.overlay').style.display = 'none';
+}
+
+function redirectToSignup() {
+  window.location.href = 'signup.html'; // Replace with actual URL
+}
+
+  </script>
+</body>
+</html>

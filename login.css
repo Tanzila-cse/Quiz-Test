@@ -1,0 +1,75 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #09001d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Login Container */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .login-box {
+    background: #1c0d3e;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+  }
+  
+  /* Login Heading */
+  .login-box h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #c40094;
+  }
+  
+  /* Textboxes */
+  .textbox {
+    margin: 10px 0;
+  }
+  
+  .textbox input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  /* Button */
+  .btn input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #c40094;
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btn input:hover {
+    background: #950170;
+  }
+  

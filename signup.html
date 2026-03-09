@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Page</title>
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+  <div class="signup-container">
+    <h1>Sign Up</h1>
+    <form id="signup-form" action="signup.php" method="POST">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Enter your full name"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+      />
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Choose a username"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+      />
+      <button type="submit">Sign Up</button>
+      <p>Already have an account?<a href="login.html">Login Here</a></p>
+      <a href=""></a>
+    </form>
+    <p id="response-message"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById("signup-form");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      const response = await fetch("signup.php", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      const messageElement = document.getElementById("response-message");
+      if (data.status) {
+        messageElement.style.color = "green";
+        messageElement.innerText = data.message;
+      } else {
+        messageElement.style.color = "red";
+        messageElement.innerText = data.message;
+      }
+    });
+  </script>
+</body>
+</html>
